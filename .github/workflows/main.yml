@@ -1,8 +1,10 @@
 name: Release Creation
 
 on:
-    release:
-        types: [published]
+    push:
+        # Sequence of patterns matched against refs/tags
+        tags:
+            - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
     build:
@@ -22,21 +24,20 @@ jobs:
                   version: ${{steps.get_version.outputs.version-without-v}}
                   url: https://github.com/${{github.repository}}
                   bugs: https://github.com/${{github.repository}}/issues
-                  license: https://raw.githubusercontent.com/${{github.repository}}/${{github.event.release.tag_name}}/LICENSE
-                  readme: https://raw.githubusercontent.com/${{github.repository}}/${{github.event.release.tag_name}}/README.md
+                  license: https://raw.githubusercontent.com/${{github.repository}}/${{steps.get_version.outputs.version}}/LICENSE
+                  readme: https://raw.githubusercontent.com/${{github.repository}}/${{steps.get_version.outputs.version}}/README.md
                   manifest: https://github.com/${{github.repository}}/releases/latest/download/module.json
-                  download: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/module.zip
+                  download: https://github.com/${{github.repository}}/releases/download/${{steps.get_version.outputs.version}}/module.zip
             - name: Create module.zip
-              run: zip -r ./module.zip module.json README.md LICENSE modules/
+              run: zip -r * -x ".github/*" "assets/*" "*.md" "*.ts" "tsconfig.json"
 
             - name: Update Release with Files
               uses: ncipollo/release-action@v1
               with:
-                  allowUpdates: true
-                  name: ${{ github.event.release.name }}
-                  draft: ${{ github.event.release.unpublished }}
-                  prerelease: ${{ github.event.release.prerelease }}
+                  tag: ${{ steps.get_version.outputs.VERSION }}
+                  name: Release ${{ steps.get_version.outputs.VERSION }}
+                  draft: false
+                  prerelease: false
                   token: ${{ secrets.GITHUB_TOKEN }}
-                  artifacts: './module.json, ./module.zip'
-                  tag: ${{ github.event.release.tag_name }}
-                  body: ${{ github.event.release.body }}
+                  artifacts: './module.json,./module.zip'
+                  allowUpdates: true
