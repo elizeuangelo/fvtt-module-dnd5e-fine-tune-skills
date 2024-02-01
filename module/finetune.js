@@ -50,6 +50,9 @@ export class FineTuneSkills extends FormApplication {
 		Object.entries(clone).forEach(([key, value]) => {
 			value.visible = !hidden.has(key) ?? true;
 			value.abbreviation = key;
+			value.fullKey ??= '';
+			value.icon ??= 'icons/svg/d20.svg';
+			value.reference ??= '';
 		});
 		return clone;
 	}
@@ -143,9 +146,11 @@ export class FineTuneSkills extends FormApplication {
 		const values = Object.values(this.preview);
 		const entries = [];
 		for (const entry of values) {
+			const link = (await fromUuid(entry.reference)).link;
+			const reference = link ? await TextEditor.enrichHTML(link, { async: true }) : '';
 			entries.push({
 				...entry,
-				reference: await TextEditor.enrichHTML((await fromUuid(entry.reference)).link, { async: true }),
+				reference: reference || 'No reference available.',
 			});
 		}
 		return {
