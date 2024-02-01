@@ -1,8 +1,8 @@
 # Fine Tune 5e: Actor Skills
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Foundry Version](https://img.shields.io/badge/foundry-v0.8.9-green.svg)
-![DND5e Version](https://img.shields.io/badge/dnd5e-v1.0.0-orange.svg)
+![Foundry Version](https://img.shields.io/badge/foundry-v11-green.svg)
+![DND5e Version](https://img.shields.io/badge/dnd5e-v3.0.0-orange.svg)
 
 A module for Foundry VTT that allows hiding actor skills in the DND5e system, on a actor by actor basis. Specially useful is combined with other modules wich create new skills for the system.
 
