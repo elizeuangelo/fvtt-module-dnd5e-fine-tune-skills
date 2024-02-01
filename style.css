@@ -1,0 +1,34 @@
+#finetune .footer-buttons {
+	display: flex;
+}
+#finetune .finetune-table {
+	overflow-y: auto;
+	max-height: 400px;
+}
+#finetune .finetune-table table {
+	table-layout: fixed;
+}
+#finetune .finetune-table thead {
+	position: sticky;
+	top: 0;
+}
+#finetune .finetune-table td {
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+#finetune .finetune-table th.small {
+	width: 40px;
+}
+#finetune .finetune-table th.buttons {
+	width: 80px;
+}
+#finetune .finetune.table td:has(img) {
+	display: flex;
+	justify-content: center;
+}
+.finetune.dialog .form-group .form-fields > img {
+	flex: 0;
+}
+.finetune.dialog input:invalid {
+	border-color: red;
+}

@@ -1,0 +1,33 @@
+<form autocomplete="off">
+    <div class="finetune-table">
+        <table>
+            <thead>
+                <tr>
+                    <th class="small"><a id="show-hide" title="{{localize "Show/Hide"}}" class="fas fa-eye{{#if hideEye}}-slash{{/if}}" data-action="{{#if hideEye}}hide{{else}}show{{/if}}"></a></th>
+                    <th class="small">{{localize "Icon"}}</th>
+                    <th>{{localize "Label"}}</th>
+                    <th>{{localize "FullKey"}}</th>
+                    <th>{{localize "Reference"}}</th>
+                    <th>{{localize "Ability"}}</th>
+                </tr>
+            </thead>
+            <tbody style="text-align: center">
+                {{#each table}}
+                <tr data-entry="{{abbreviation}}">
+                    <td><input data-eye data-bind="{{abbreviation}}.visible" type="checkbox" {{#if visible}}checked{{/if}}/></td>
+                    <td><img height="24" src="{{icon}}" alt="{{label}}" /></td>
+                    <td>{{label}}</td>
+                    <td>{{fullKey}}</td>
+                    <td>{{{reference}}}</td>
+                    <td>{{ability}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+	<!-- FOOTER BUTTONS -->
+	<div class="footer-buttons">
+        <button type="submit" name="submit" class="default"><i class="far fa-table"></i>{{localize "Save"}}</button>
+	</div>
+</form>

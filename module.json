@@ -1,0 +1,37 @@
+{
+	"id": "dnd5e-fine-tune-skills",
+	"title": "Fine Tune 5e: Actor Skills",
+	"description": "",
+	"authors": [
+		{
+			"name": "Mad Wizard",
+			"discord": "mad.wizard"
+		}
+	],
+	"url": "this is auto replaced",
+	"license": "this is auto replaced",
+	"readme": "this is auto replaced",
+	"bugs": "this is auto replaced",
+	"version": "This is auto replaced",
+	"compatibility": {
+		"minimum": 11,
+		"verified": 11
+	},
+	"esmodules": ["main.js"],
+	"styles": ["style.css"],
+	"relationships": {
+		"systems": [
+			{
+				"id": "dnd5e",
+				"type": "system",
+				"compatibility": {
+					"minimum": "2.4.1",
+					"verified": "3.0.0"
+				}
+			}
+		]
+	},
+	"manifest": "this is auto replaced",
+	"download": "this is auto replaced",
+	"manifestPlusVersion": "1.2.0"
+}
