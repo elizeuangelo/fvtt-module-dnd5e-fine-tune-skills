@@ -146,11 +146,11 @@ export class FineTuneSkills extends FormApplication {
 		const values = Object.values(this.preview);
 		const entries = [];
 		for (const entry of values) {
-			const link = (await fromUuid(entry.reference)).link;
-			const reference = link ? await TextEditor.enrichHTML(link, { async: true }) : '';
+			const link = (await fromUuid(entry.reference))?.link;
+			const reference = link ? await TextEditor.enrichHTML(link, { async: true }) : 'No reference available.';
 			entries.push({
 				...entry,
-				reference: reference || 'No reference available.',
+				reference,
 			});
 		}
 		return {
