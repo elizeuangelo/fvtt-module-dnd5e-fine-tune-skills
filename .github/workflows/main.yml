@@ -29,7 +29,7 @@ jobs:
                   manifest: https://github.com/${{github.repository}}/releases/latest/download/module.json
                   download: https://github.com/${{github.repository}}/releases/download/${{steps.get_version.outputs.version}}/module.zip
             - name: Create module.zip
-              run: zip -r * -x ".github/*" "assets/*" "*.md" "*.ts" "tsconfig.json"
+              run: zip -r module * -x ".github/*" "assets/*" "*.md" "*.ts" "tsconfig.json"
 
             - name: Update Release with Files
               uses: ncipollo/release-action@v1
