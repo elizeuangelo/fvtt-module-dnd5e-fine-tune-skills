@@ -12,7 +12,7 @@ A module for Foundry VTT that allows hiding actor skills in the DND5e system, on
 
 ## Installation
 
-1. Download the latest release from the [Releases](https://github.com/elizeuangelo/dnd5e-fine-tune-skills/releases) page.
+1. Download the latest release from the [Releases](https://github.com/elizeuangelo/fvtt-module-dnd5e-fine-tune-skills/releases) page.
 2. Extract the contents of the zip file to your Foundry VTT `modules` folder.
 3. Restart your Foundry VTT server.
 4. Enable the "Fine Tune 5e: Actor Skills" module in the Foundry VTT setup.
@@ -27,12 +27,12 @@ A module for Foundry VTT that allows hiding actor skills in the DND5e system, on
 
 ## Support
 
-If you encounter any issues or have any questions, please feel free to create an [issue](https://github.com/elizeuangelo/dnd5e-fine-tune-skills/issues) on the GitHub repository.
+If you encounter any issues or have any questions, please feel free to create an [issue](https://github.com/elizeuangelo/fvtt-module-dnd5e-fine-tune-skills/issues) on the GitHub repository.
 
 ## Contributing
 
-Contributions are welcome! If you have any ideas, suggestions, or improvements, please create a [pull request](https://github.com/elizeuangelo/dnd5e-fine-tune-skills/pulls) on the GitHub repository.
+Contributions are welcome! If you have any ideas, suggestions, or improvements, please create a [pull request](https://github.com/elizeuangelo/fvtt-module-dnd5e-fine-tune-skills/pulls) on the GitHub repository.
 
 ## License
 
-This module is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the [LICENSE](https://github.com/elizeuangelo/dnd5e-fine-tune-skills/blob/main/LICENSE) file for more details.
+This module is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the [LICENSE](https://github.com/elizeuangelo/fvtt-module-dnd5e-fine-tune-skills/blob/main/LICENSE) file for more details.
